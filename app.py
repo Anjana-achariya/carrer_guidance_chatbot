@@ -38,10 +38,11 @@ if uploaded_file is not None:
   preprocessed_text = preprocess(resume_text)
 
   top_roles = predict_roles(model_nb,tf_idf,preprocessed_text)
+  decoded_roles = {le.inverse_transform([int(role)])[0]: prob for role, prob in top_roles.items()}  
 
   st.subheader(" top 5 role suggestions:")
 
-  for role,prob in top_roles.items():
+  for role,prob in decoded_roles.items():
     st.write(f"{role} ({prob*100:.2f}%)")
 
   selected_role = st.selectbox("Do you want to see required skills for the roles?" , 
