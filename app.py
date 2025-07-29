@@ -19,7 +19,7 @@ import json
 import pickle
 import joblib
 
-le = joblib.load("label_encoder.pkl")
+le = joblib.load("encoder.pkl")
 
 with open("nb_model.pkl","rb") as f:
   model_nb = joblib.load(f)
