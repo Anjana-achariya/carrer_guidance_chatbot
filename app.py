@@ -35,7 +35,7 @@ if uploaded_file is not None:
   resume_text = extract_file(uploaded_file)
   preprocessed_text = preprocess(resume_text)
 
-  top_roles = predict_roles(model_nb,vectorizer,preprocessed_text)
+  top_roles = predict_roles(model_nb,tf_idf,preprocessed_text)
 
   st.subheader(" top 5 role suggestions:")
 
