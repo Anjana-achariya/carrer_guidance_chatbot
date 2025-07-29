@@ -41,8 +41,8 @@ if uploaded_file is not None:
 
   st.subheader(" top 5 role suggestions:")
 
-  for i,role in enumerate(top_roles,1):
-    st.write(f"{role} ({proba *100:.2f}%)")
+  for role,prob in top_roles.items():
+    st.write(f"{role} ({prob*100:.2f}%)")
 
   selected_role = st.selectbox("Do you want to see required skills for the roles?" , 
                                list(top_roles.keys()))
