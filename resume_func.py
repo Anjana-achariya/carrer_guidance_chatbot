@@ -92,7 +92,7 @@ model = joblib.load("nb_model.pkl")
 
 #!pip install docx2txt
 
-import gradio as gr
+#import gradio as gr
 import fitz
 import docx2txt
 import string
