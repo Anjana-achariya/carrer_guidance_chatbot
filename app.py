@@ -19,6 +19,8 @@ import json
 import pickle
 import joblib
 
+le = joblib.load("label_encoder.pkl")
+
 with open("nb_model.pkl","rb") as f:
   model_nb = joblib.load(f)
 
@@ -42,7 +44,8 @@ if uploaded_file is not None:
   for i,role in enumerate(top_roles,1):
     st.write(f"{i}. {role}")
 
-  selected_role = st.selectbox("Do you want to see required skills for the roles?" , list(top_roles.key()))
+  selected_role = st.selectbox("Do you want to see required skills for the roles?" , list(top_roles.keys()))
+
 
   if selected_role:
     skills = skills.get(selected_role,[])
