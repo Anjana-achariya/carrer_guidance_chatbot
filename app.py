@@ -17,12 +17,13 @@ import streamlit as st
 
 import json
 import pickle
+import joblib
 
 with open("nb_model.pkl","rb") as f:
-  model_nb = pickle.load(f)
+  model_nb = joblib.load(f)
 
 with open("tf_idf.pkl","rb") as f:
-  tf_idf = pickle.load(f)
+  tf_idf = joblib.load(f)
 
 with open("skills.json","r") as f:
   skills = json.load(f)
@@ -34,7 +35,7 @@ if uploaded_file is not None:
   resume_text = extract_file(uploaded_file)
   preprocessed_text = preprocess(resume_text)
 
-  top_roles = predict_roles( model_nb, tf_idf, preprocessed_text)
+  top_roles = predict_roles(model_nb,tf_idf,preprocessed_text)
 
   st.subheader(" top 5 role suggestions:")
 
