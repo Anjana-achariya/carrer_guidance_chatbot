@@ -85,6 +85,13 @@ job_skills
 
 import joblib
 
+with open("nb_model.pkl", "wb") as f:
+    pickle.dump(nb_model, f)
+
+# Save the vectorizer (if used)
+with open("vectorizer.pkl", "wb") as f:
+    pickle.dump(vectorizer, f)
+
 vectorizer= joblib.load("vectorizer.pkl")
 model = joblib.load("nb_model.pkl")
 
