@@ -11,7 +11,7 @@ from resume_func import preprocess, extract_file, predict_roles
 
 #!pip install streamlit nltk PyMuPDF docx2txt joblib
 
-!pip install streamlit
+#!pip install streamlit
 
 import streamlit as st
 
