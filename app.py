@@ -42,12 +42,13 @@ if uploaded_file is not None:
   st.subheader(" top 5 role suggestions:")
 
   for i,role in enumerate(top_roles,1):
-    st.write(f"{i}. {role}")
+    st.write(f"{role} ({proba *100:.2f}%)")
 
-  selected_role = st.selectbox("Do you want to see required skills for the roles?" , list(top_roles.keys()))
+  selected_role = st.selectbox("Do you want to see required skills for the roles?" , 
+                               list(top_roles.keys()))
 
 
   if selected_role:
-    skills = skills.get(selected_role,[])
+    required_skills = skills.get(selected_role,[])
     st.write(f"**Skills for {selected_role}:**")
-    st.write(", ".join(skills) if skills else "No skill data available.")
+    st.write(", ".join(required_skills) if required_skills else "No skill data available.")
