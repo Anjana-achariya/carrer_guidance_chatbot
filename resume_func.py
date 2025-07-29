@@ -74,7 +74,7 @@ print(a)
 
 import json
 
-with open("/content/skills.json") as f:
+with open("skills.json") as f:
   job_skills = json.load(f)
 
 job_skills
@@ -85,8 +85,8 @@ job_skills
 
 import joblib
 
-vectorizer= joblib.load("/content/vectorizer.pkl")
-model = joblib.load("/content/nb_model.pkl")
+vectorizer= joblib.load("vectorizer.pkl")
+model = joblib.load("nb_model.pkl")
 
 #!pip install PyMuPDF
 
