@@ -46,7 +46,7 @@ if uploaded_file is not None:
     st.write(f"{role} ({prob*100:.2f}%)")
 
   selected_role = st.selectbox("Do you want to see required skills for the roles?" , 
-                               list(top_roles.keys()))
+                               list(decoded_roles.keys()))
 
 
   if selected_role:
