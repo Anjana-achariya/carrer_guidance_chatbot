@@ -4,3 +4,4 @@ nltk
 PyMuPDF
 docx2txt
 joblib
+textract
