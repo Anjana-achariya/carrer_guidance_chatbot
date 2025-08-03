@@ -63,7 +63,10 @@ import textract
 
 
 # In[12]:
-
+try:
+    import textract
+except ImportError:
+    textract = None
 
 def extract_file(resume):
     fn = resume.name.lower()
@@ -111,6 +114,7 @@ def predict_roles(model,vectorizer,text,top_n=5):
 
 
 # In[ ]:
+
 
 
 
